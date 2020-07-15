@@ -19,12 +19,10 @@ namespace PrimeSifting
     {
       for(int i = 0; i < intList.Count; i++ )
       {
-        Console.WriteLine();
         for (int j = i + 1; j < intList.Count; j++)
         {
           if(intList[j] % intList[i] == 0)
           {
-            Console.WriteLine("Removing: " + intList[j]);
             intList.RemoveAt(j);
           }
         }
