@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PrimeSifting;
+using System.Collections.Generic;
 
 namespace PrimeSifting.Tests
 {
@@ -7,10 +8,19 @@ namespace PrimeSifting.Tests
   public class PrimesTests
   {
     [TestMethod]
-    public void PrimesConstructor_CreatesInstanceOfItem_Item()
+    public void PrimesConstructor_CreatesInstanceOfPrime_Prime()
     {
       Primes testPrimes = new Primes();
       Assert.AreEqual(typeof(Primes), testPrimes.GetType());
+    }
+
+    [TestMethod]
+    public void ReturnList_CreatesListOfNums_List()
+    {
+      Primes testPrimes = new Primes();
+      List<int> newList = new List<int> { 2, 3, 4 };
+      List<int> result = testPrimes.ReturnPrimes(5);
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
