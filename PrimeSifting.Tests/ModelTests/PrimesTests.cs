@@ -15,12 +15,21 @@ namespace PrimeSifting.Tests
     }
 
     [TestMethod]
-    public void ReturnList_CreatesListOfNums_List()
+    public void CreateList_CreatesListOfNums_List()
     {
       Primes testPrimes = new Primes();
       List<int> newList = new List<int> { 2, 3, 4 };
-      List<int> result = testPrimes.ReturnPrimes(5);
+      List<int> result = testPrimes.CreateList(5);
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void ReturnPrimes_ReturnsPrimeList_List()
+    {
+      Primes testPrimes = new Primes();
+      List<int> newList = new List<int> { 2, 3};
+      List<int> result = testPrimes.CreateList(5);
+      CollectionAssert.AreEqual(newList, testPrimes.ReturnPrimes(result)); 
     }
   }
 }
